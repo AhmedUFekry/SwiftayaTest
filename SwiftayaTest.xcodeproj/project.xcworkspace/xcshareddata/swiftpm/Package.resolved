@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftly",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AhmedUFekry/Swiftly.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "7ddf285c310bdad888c15371b82d9c3d377a2f15"
+      }
+    }
+  ],
+  "version" : 2
+}
