@@ -7,13 +7,15 @@
 
 import Foundation
 import Combine
+import Swiftaya
 class LoginViewModel: ObservableObject {
     private let useCase: LoginUseCase
     
     @Published var user: User?
     @Published var error: Error?
     
-    init(useCase: LoginUseCase = LoginUseCase()) {
+    
+    init(useCase: LoginUseCase = LoginUseCase(repository: UserRepository() as (any BaseRepositoryProtocol))) {
         self.useCase = useCase
     }
     
