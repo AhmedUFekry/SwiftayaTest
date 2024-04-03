@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C83ED8312BBCD957008A5A33 /* SwiftayaTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C83ED82E2BBCD957008A5A33 /* SwiftayaTest.xcdatamodeld */; };
+		C83ED8322BBCD957008A5A33 /* Prooduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED8302BBCD957008A5A33 /* Prooduct.swift */; };
+		C83ED8362BBCD9A5008A5A33 /* ProductLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED8352BBCD9A5008A5A33 /* ProductLocalDataSource.swift */; };
+		C83ED8382BBCD9B8008A5A33 /* ProductRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED8372BBCD9B8008A5A33 /* ProductRemoteDataSource.swift */; };
+		C83ED83A2BBCD9C7008A5A33 /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED8392BBCD9C7008A5A33 /* ProductRepository.swift */; };
+		C83ED83C2BBCD9D4008A5A33 /* ProductUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED83B2BBCD9D4008A5A33 /* ProductUseCase.swift */; };
+		C83ED83E2BBCD9E2008A5A33 /* ProductVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED83D2BBCD9E2008A5A33 /* ProductVM.swift */; };
+		C83ED8432BBCDA14008A5A33 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED8402BBCDA14008A5A33 /* CoreDataStorage.swift */; };
+		C83ED8442BBCDA14008A5A33 /* CoreDataStorageManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED8412BBCDA14008A5A33 /* CoreDataStorageManagerProtocol.swift */; };
+		C83ED8452BBCDA14008A5A33 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED8422BBCDA14008A5A33 /* APIEndpoints.swift */; };
 		C86B197C2BB389FE009A906C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B197B2BB389FE009A906C /* AppDelegate.swift */; };
 		C86B197E2BB389FE009A906C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B197D2BB389FE009A906C /* SceneDelegate.swift */; };
 		C86B19802BB389FE009A906C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B197F2BB389FE009A906C /* ViewController.swift */; };
@@ -42,6 +52,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C83ED82F2BBCD957008A5A33 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		C83ED8302BBCD957008A5A33 /* Prooduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prooduct.swift; sourceTree = "<group>"; };
+		C83ED8352BBCD9A5008A5A33 /* ProductLocalDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductLocalDataSource.swift; sourceTree = "<group>"; };
+		C83ED8372BBCD9B8008A5A33 /* ProductRemoteDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductRemoteDataSource.swift; path = ProductsRemoteDataSource/ProductRemoteDataSource.swift; sourceTree = "<group>"; };
+		C83ED8392BBCD9C7008A5A33 /* ProductRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
+		C83ED83B2BBCD9D4008A5A33 /* ProductUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductUseCase.swift; sourceTree = "<group>"; };
+		C83ED83D2BBCD9E2008A5A33 /* ProductVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductVM.swift; sourceTree = "<group>"; };
+		C83ED8402BBCDA14008A5A33 /* CoreDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		C83ED8412BBCDA14008A5A33 /* CoreDataStorageManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStorageManagerProtocol.swift; sourceTree = "<group>"; };
+		C83ED8422BBCDA14008A5A33 /* APIEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		C86B19782BB389FE009A906C /* SwiftayaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftayaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86B197B2BB389FE009A906C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C86B197D2BB389FE009A906C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +108,110 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C83ED83F2BBCDA14008A5A33 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C83ED8402BBCDA14008A5A33 /* CoreDataStorage.swift */,
+				C83ED8412BBCDA14008A5A33 /* CoreDataStorageManagerProtocol.swift */,
+				C83ED8422BBCDA14008A5A33 /* APIEndpoints.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C86863532BBCBA9B000C40F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C86863592BBCBB2A000C40F0 /* Presenter */,
+				C86863582BBCBB17000C40F0 /* ProductsUseCase */,
+				C86863562BBCBADF000C40F0 /* ProductsRepository */,
+				C86863552BBCBAD7000C40F0 /* ViewModel */,
+				C86863542BBCBACC000C40F0 /* Model */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		C86863542BBCBACC000C40F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C83ED83F2BBCDA14008A5A33 /* Services */,
+				C868635D2BBCBC05000C40F0 /* DataModels */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C86863552BBCBAD7000C40F0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C83ED83D2BBCD9E2008A5A33 /* ProductVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C86863562BBCBADF000C40F0 /* ProductsRepository */ = {
+			isa = PBXGroup;
+			children = (
+				C83ED8392BBCD9C7008A5A33 /* ProductRepository.swift */,
+				C868635F2BBCBC37000C40F0 /* Remote */,
+				C868635E2BBCBC24000C40F0 /* Local */,
+			);
+			path = ProductsRepository;
+			sourceTree = "<group>";
+		};
+		C86863582BBCBB17000C40F0 /* ProductsUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				C83ED83B2BBCD9D4008A5A33 /* ProductUseCase.swift */,
+			);
+			path = ProductsUseCase;
+			sourceTree = "<group>";
+		};
+		C86863592BBCBB2A000C40F0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C868635B2BBCBB9F000C40F0 /* ProductsRemoteDataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductsRemoteDataSource;
+			sourceTree = "<group>";
+		};
+		C868635C2BBCBBB2000C40F0 /* ProductsLocalDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				C83ED8352BBCD9A5008A5A33 /* ProductLocalDataSource.swift */,
+			);
+			path = ProductsLocalDataSource;
+			sourceTree = "<group>";
+		};
+		C868635D2BBCBC05000C40F0 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				C83ED8302BBCD957008A5A33 /* Prooduct.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		C868635E2BBCBC24000C40F0 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				C868635C2BBCBBB2000C40F0 /* ProductsLocalDataSource */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		C868635F2BBCBC37000C40F0 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				C868635B2BBCBB9F000C40F0 /* ProductsRemoteDataSource */,
+				C83ED8372BBCD9B8008A5A33 /* ProductRemoteDataSource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
 		C86B196F2BB389FE009A906C = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +235,8 @@
 		C86B197A2BB389FE009A906C /* SwiftayaTest */ = {
 			isa = PBXGroup;
 			children = (
+				C83ED82E2BBCD957008A5A33 /* SwiftayaTest.xcdatamodeld */,
+				C86863532BBCBA9B000C40F0 /* Products */,
 				C86B19AE2BB38A58009A906C /* Login */,
 				C86B197B2BB389FE009A906C /* AppDelegate.swift */,
 				C86B197D2BB389FE009A906C /* SceneDelegate.swift */,
@@ -345,14 +471,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C83ED83A2BBCD9C7008A5A33 /* ProductRepository.swift in Sources */,
+				C83ED8382BBCD9B8008A5A33 /* ProductRemoteDataSource.swift in Sources */,
 				C86B19802BB389FE009A906C /* ViewController.swift in Sources */,
+				C83ED8452BBCDA14008A5A33 /* APIEndpoints.swift in Sources */,
+				C83ED8322BBCD957008A5A33 /* Prooduct.swift in Sources */,
 				C86B197C2BB389FE009A906C /* AppDelegate.swift in Sources */,
 				C86B19B72BB38B40009A906C /* Repository.swift in Sources */,
 				C86B19B52BB38B20009A906C /* UserDto.swift in Sources */,
 				C86B197E2BB389FE009A906C /* SceneDelegate.swift in Sources */,
+				C83ED8432BBCDA14008A5A33 /* CoreDataStorage.swift in Sources */,
 				C86B19B92BB38B82009A906C /* LoginUseCase.swift in Sources */,
 				C86B19BB2BB38BA5009A906C /* LoginViewModel.swift in Sources */,
+				C83ED8362BBCD9A5008A5A33 /* ProductLocalDataSource.swift in Sources */,
+				C83ED8312BBCD957008A5A33 /* SwiftayaTest.xcdatamodeld in Sources */,
 				C86B19BF2BB38CA1009A906C /* LoginRequest.swift in Sources */,
+				C83ED8442BBCDA14008A5A33 /* CoreDataStorageManagerProtocol.swift in Sources */,
+				C83ED83E2BBCD9E2008A5A33 /* ProductVM.swift in Sources */,
+				C83ED83C2BBCD9D4008A5A33 /* ProductUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +849,19 @@
 			productName = Swiftaya;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		C83ED82E2BBCD957008A5A33 /* SwiftayaTest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C83ED82F2BBCD957008A5A33 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = C83ED82F2BBCD957008A5A33 /* CoreDataModel.xcdatamodel */;
+			path = SwiftayaTest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C86B19702BB389FE009A906C /* Project object */;
 }

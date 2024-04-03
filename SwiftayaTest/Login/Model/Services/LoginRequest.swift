@@ -9,11 +9,11 @@ import Foundation
 import Swiftaya
 struct LoginRequest: APIRequestProtocol {
     typealias Response = User
-    let baseUrl: String = "https://dummyjson.com"
-    let path: String = "/auth/login"
-    let method: String = "POST"
-    let body: Data?
-    let headers: [String: String]? = ["Content-Type": "application/json"]
+    var baseUrl: String = "https://dummyjson.com"
+    var path: String = "/auth/login"
+    var method: String = "POST"
+    var body: Data?
+    var headers: [String: String]? = ["Content-Type": "application/json"]
     
     init(username: String, password: String) {
         let params: [String: Any] = [
