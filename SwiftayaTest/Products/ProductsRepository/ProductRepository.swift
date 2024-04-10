@@ -10,13 +10,16 @@ import Combine
 
 class ProductRepository {
     
+    static let shared = ProductRepository()
+    
     private let productRemoteDataSource: ProductRemoteDataSource
     private let productLocalDataSource: ProductLocalDataSource
     
-    init(productRemoteDataSource: ProductRemoteDataSource, productLocalDataSource: ProductLocalDataSource) {
-        self.productRemoteDataSource = productRemoteDataSource
-        self.productLocalDataSource = productLocalDataSource
+    private init() {
+        self.productRemoteDataSource = ProductRemoteDataSource()
+        self.productLocalDataSource = ProductLocalDataSource()
     }
+    
     
     // MARK: - Remote
     

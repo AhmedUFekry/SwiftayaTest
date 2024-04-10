@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80EA1C02BCD33450080454A /* RemoteProductFetchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80EA1BF2BCD33450080454A /* RemoteProductFetchUseCase.swift */; };
+		C80EA1C22BCD33E60080454A /* RemoteProductModificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80EA1C12BCD33E60080454A /* RemoteProductModificationUseCase.swift */; };
+		C80EA1C42BCD34690080454A /* LocalProductModificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80EA1C32BCD34690080454A /* LocalProductModificationUseCase.swift */; };
 		C83ED8312BBCD957008A5A33 /* SwiftayaTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C83ED82E2BBCD957008A5A33 /* SwiftayaTest.xcdatamodeld */; };
 		C83ED8322BBCD957008A5A33 /* Prooduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED8302BBCD957008A5A33 /* Prooduct.swift */; };
 		C83ED8362BBCD9A5008A5A33 /* ProductLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED8352BBCD9A5008A5A33 /* ProductLocalDataSource.swift */; };
 		C83ED8382BBCD9B8008A5A33 /* ProductRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED8372BBCD9B8008A5A33 /* ProductRemoteDataSource.swift */; };
 		C83ED83A2BBCD9C7008A5A33 /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED8392BBCD9C7008A5A33 /* ProductRepository.swift */; };
-		C83ED83C2BBCD9D4008A5A33 /* ProductUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED83B2BBCD9D4008A5A33 /* ProductUseCase.swift */; };
+		C83ED83C2BBCD9D4008A5A33 /* LocalProductFetchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED83B2BBCD9D4008A5A33 /* LocalProductFetchUseCase.swift */; };
 		C83ED83E2BBCD9E2008A5A33 /* ProductVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED83D2BBCD9E2008A5A33 /* ProductVM.swift */; };
 		C83ED8432BBCDA14008A5A33 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED8402BBCDA14008A5A33 /* CoreDataStorage.swift */; };
 		C83ED8442BBCDA14008A5A33 /* CoreDataStorageManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83ED8412BBCDA14008A5A33 /* CoreDataStorageManagerProtocol.swift */; };
@@ -52,12 +55,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C80EA1BF2BCD33450080454A /* RemoteProductFetchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteProductFetchUseCase.swift; sourceTree = "<group>"; };
+		C80EA1C12BCD33E60080454A /* RemoteProductModificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteProductModificationUseCase.swift; sourceTree = "<group>"; };
+		C80EA1C32BCD34690080454A /* LocalProductModificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalProductModificationUseCase.swift; sourceTree = "<group>"; };
 		C83ED82F2BBCD957008A5A33 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		C83ED8302BBCD957008A5A33 /* Prooduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prooduct.swift; sourceTree = "<group>"; };
 		C83ED8352BBCD9A5008A5A33 /* ProductLocalDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductLocalDataSource.swift; sourceTree = "<group>"; };
 		C83ED8372BBCD9B8008A5A33 /* ProductRemoteDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductRemoteDataSource.swift; path = ProductsRemoteDataSource/ProductRemoteDataSource.swift; sourceTree = "<group>"; };
 		C83ED8392BBCD9C7008A5A33 /* ProductRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
-		C83ED83B2BBCD9D4008A5A33 /* ProductUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductUseCase.swift; sourceTree = "<group>"; };
+		C83ED83B2BBCD9D4008A5A33 /* LocalProductFetchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalProductFetchUseCase.swift; sourceTree = "<group>"; };
 		C83ED83D2BBCD9E2008A5A33 /* ProductVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductVM.swift; sourceTree = "<group>"; };
 		C83ED8402BBCDA14008A5A33 /* CoreDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		C83ED8412BBCDA14008A5A33 /* CoreDataStorageManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStorageManagerProtocol.swift; sourceTree = "<group>"; };
@@ -160,7 +166,10 @@
 		C86863582BBCBB17000C40F0 /* ProductsUseCase */ = {
 			isa = PBXGroup;
 			children = (
-				C83ED83B2BBCD9D4008A5A33 /* ProductUseCase.swift */,
+				C83ED83B2BBCD9D4008A5A33 /* LocalProductFetchUseCase.swift */,
+				C80EA1BF2BCD33450080454A /* RemoteProductFetchUseCase.swift */,
+				C80EA1C12BCD33E60080454A /* RemoteProductModificationUseCase.swift */,
+				C80EA1C32BCD34690080454A /* LocalProductModificationUseCase.swift */,
 			);
 			path = ProductsUseCase;
 			sourceTree = "<group>";
@@ -484,11 +493,14 @@
 				C86B19B92BB38B82009A906C /* LoginUseCase.swift in Sources */,
 				C86B19BB2BB38BA5009A906C /* LoginViewModel.swift in Sources */,
 				C83ED8362BBCD9A5008A5A33 /* ProductLocalDataSource.swift in Sources */,
+				C80EA1C02BCD33450080454A /* RemoteProductFetchUseCase.swift in Sources */,
+				C80EA1C22BCD33E60080454A /* RemoteProductModificationUseCase.swift in Sources */,
 				C83ED8312BBCD957008A5A33 /* SwiftayaTest.xcdatamodeld in Sources */,
 				C86B19BF2BB38CA1009A906C /* LoginRequest.swift in Sources */,
 				C83ED8442BBCDA14008A5A33 /* CoreDataStorageManagerProtocol.swift in Sources */,
+				C80EA1C42BCD34690080454A /* LocalProductModificationUseCase.swift in Sources */,
 				C83ED83E2BBCD9E2008A5A33 /* ProductVM.swift in Sources */,
-				C83ED83C2BBCD9D4008A5A33 /* ProductUseCase.swift in Sources */,
+				C83ED83C2BBCD9D4008A5A33 /* LocalProductFetchUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
