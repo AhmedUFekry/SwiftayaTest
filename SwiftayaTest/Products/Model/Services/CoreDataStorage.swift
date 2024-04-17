@@ -98,7 +98,6 @@ class CoreDataStorageManager: CoreDataStorageManagerProtocol {
         return Future<Void, Error> { promise in
             let newProduct = ProductEntity(context: self.managedObjectContext)
             newProduct.title = title
-            
             do {
                 try self.managedObjectContext.save()
                 promise(.success(()))

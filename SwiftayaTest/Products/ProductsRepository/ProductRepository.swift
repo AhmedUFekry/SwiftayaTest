@@ -8,12 +8,16 @@
 import Foundation
 import Combine
 
-class ProductRepository {
+class ProductRepository : ProductRepositoryProtocol{
+
+    
+
+    
     
     static let shared = ProductRepository()
     
-    private let productRemoteDataSource: ProductRemoteDataSource
-    private let productLocalDataSource: ProductLocalDataSource
+    private let productRemoteDataSource: ProductRemoteDataSourceProtocol
+    private let productLocalDataSource: ProductLocalDataSourceProtocol
     
     private init() {
         self.productRemoteDataSource = ProductRemoteDataSource()
@@ -52,4 +56,18 @@ class ProductRepository {
     func saveProductsFromJSON(jsonData: Data) {
         productLocalDataSource.saveProductsFromJSON(jsonData: jsonData)
     }
+}
+
+
+protocol ProductRepositoryProtocol {
+    // Remote
+    func fetchProductsRemotely() -> AnyPublisher<ProductAPIResponse, Error>
+    func fetchProductRemotely(withId id: Int) -> AnyPublisher<Product, Error>
+    func addNewProductRemotely(title: String) -> AnyPublisher<Product, Error>
+    func updateProductRemotely(withId id: Int, title: String) -> AnyPublisher<Product, Error>
+    func deleteProductRemotely(withId id: Int) -> AnyPublisher<Product, Error>
+    
+    // Local
+    func fetchProductsLocaly() -> AnyPublisher<[ProductEntity], Error>
+    func saveProductsFromJSON(jsonData: Data)
 }

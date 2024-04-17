@@ -7,10 +7,9 @@
 
 import Foundation
 import Combine
-class LocalProductModificationUseCase {
+class SaveProductUseCase {
     
-    private let repository: ProductRepository = ProductRepository.shared
-
+    private let repository: ProductRepositoryProtocol = ProductRepository.shared
     
     func saveProductsFromJSON(jsonData: Data) {
         repository.saveProductsFromJSON(jsonData: jsonData)

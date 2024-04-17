@@ -13,14 +13,15 @@ class ProductVM {
     @Published var productResponseLocal: [ProductEntity]?
     @Published var product: Product?
 
-    private let remoteProductFetchUseCase: RemoteProductFetchUseCase = RemoteProductFetchUseCase()
-    private let remoteProductModificationUseCase: RemoteProductModificationUseCase = RemoteProductModificationUseCase()
-    private let localProductFetchUseCase: LocalProductFetchUseCase = LocalProductFetchUseCase()
-    private let localProductModificationUseCase: LocalProductModificationUseCase = LocalProductModificationUseCase()
+    private let addNewProductUseCase: AddNewProductUseCase = AddNewProductUseCase()
+    private let productFetchUseCase: ProductFetchUseCase = ProductFetchUseCase()
+    private let saveProductUseCase: SaveProductUseCase = SaveProductUseCase()
+    private let updateProductUseCase :UpdateProductUseCase = UpdateProductUseCase()
+    private let deleteProductUseCase : DeleteProductUseCase = DeleteProductUseCase()
 
 
     func fetchProductsRemote(completion: @escaping (Error?) -> Void) {
-        remoteProductFetchUseCase.execute(requestData: ())
+        productFetchUseCase.execute(requestData: ())
             .sink(receiveCompletion: {completion($0 as? Error)}) { [weak self] productResponseRemote in
                 self?.productResponseRemote = productResponseRemote
             }
@@ -28,7 +29,7 @@ class ProductVM {
     }
     
     func getProduct(withId id: Int) {
-        remoteProductFetchUseCase.getProduct(withId: id)
+        productFetchUseCase.getProduct(withId: id)
             .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] product in
                 self?.product = product
             })
@@ -37,7 +38,7 @@ class ProductVM {
     
     func addNewProduct(title: String) {
         print("ProductVM: Calling addNewProduct")
-        remoteProductModificationUseCase.addNewProduct(title: title)
+        addNewProductUseCase.addNewProduct(title: title)
             .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] product in
                 print("ProductVM: Received product from addNewProduct")
                 self?.product = product
@@ -46,7 +47,7 @@ class ProductVM {
     }
     
     func updateProduct(withId id: Int, title: String) {
-        remoteProductModificationUseCase.updateProduct(withId: id, title: title)
+        updateProductUseCase.updateProduct(withId: id, title: title)
             .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] product in
                 self?.product = product
             })
@@ -54,7 +55,7 @@ class ProductVM {
     }
     
     func deleteProduct(withId id: Int) {
-        remoteProductModificationUseCase.deleteProduct(withId: id)
+        deleteProductUseCase.deleteProduct(withId: id)
             .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] product in
                 self?.product = product
             })
@@ -62,7 +63,7 @@ class ProductVM {
     }
     
     func fetchProductsLocal(completion: @escaping (Error?) -> Void) {
-        localProductFetchUseCase.fetchProducts()
+        productFetchUseCase.fetchProductsLocaly()
         .receive(on: DispatchQueue.main)
         .sink(receiveCompletion: {completion($0 as? Error)}) { [weak self] productResponseLocal in
             self?.productResponseLocal = productResponseLocal
@@ -73,7 +74,7 @@ class ProductVM {
     func saveProductsToCoreData(products: ProductAPIResponse) {
         do {
             let jsonData = try JSONEncoder().encode(products)
-            localProductModificationUseCase.saveProductsFromJSON(jsonData: jsonData)
+            saveProductUseCase.saveProductsFromJSON(jsonData: jsonData)
         } catch {
             print("Error encoding products to JSON: \(error)")
         }

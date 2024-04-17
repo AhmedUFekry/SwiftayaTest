@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class ProductLocalDataSource {
+class ProductLocalDataSource : ProductLocalDataSourceProtocol{
     private let coreDataStorageManager: CoreDataStorageManagerProtocol = CoreDataStorageManager.shared
     
     func fetchData() -> AnyPublisher<[ProductEntity], Error> {
@@ -18,4 +18,9 @@ class ProductLocalDataSource {
     func saveProductsFromJSON(jsonData: Data) {
         coreDataStorageManager.saveProductsFromJSON(jsonData: jsonData)
     }
+}
+
+protocol ProductLocalDataSourceProtocol {
+    func fetchData() -> AnyPublisher<[ProductEntity], Error>
+    func saveProductsFromJSON(jsonData: Data)
 }
