@@ -7,10 +7,16 @@
 
 import UIKit
 import Combine
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
+    
+    var productResponseRemote: ProductAPIResponse?
+    var productResponseLocal: [ProductEntity]?
+    var product: Product?
+    
+    var presenter : ProductPresenter?
+    
 
     private var viewModel = LoginViewModel()
-    private var cancellables = Set<AnyCancellable>()
 
     var productVM = ProductVM()
     let pm = ProductVM()

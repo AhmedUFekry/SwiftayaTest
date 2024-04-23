@@ -36,6 +36,10 @@
 		C86B19B92BB38B82009A906C /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B19B82BB38B82009A906C /* LoginUseCase.swift */; };
 		C86B19BB2BB38BA5009A906C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B19BA2BB38BA5009A906C /* LoginViewModel.swift */; };
 		C86B19BF2BB38CA1009A906C /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B19BE2BB38CA1009A906C /* LoginRequest.swift */; };
+		C8D65AC02BD875DC00356C10 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D65ABF2BD875DC00356C10 /* BaseViewModel.swift */; };
+		C8D65AC22BD8766800356C10 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D65AC12BD8766800356C10 /* BaseViewController.swift */; };
+		C8D65AC72BD87A8900356C10 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D65AC62BD87A8900356C10 /* Presenter.swift */; };
+		C8D65AC92BD87BD700356C10 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D65AC82BD87BD700356C10 /* BasePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +92,10 @@
 		C86B19B82BB38B82009A906C /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		C86B19BA2BB38BA5009A906C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C86B19BE2BB38CA1009A906C /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		C8D65ABF2BD875DC00356C10 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		C8D65AC12BD8766800356C10 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C8D65AC62BD87A8900356C10 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		C8D65AC82BD87BD700356C10 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,25 +174,12 @@
 			path = DeleteProductUseCase;
 			sourceTree = "<group>";
 		};
-		C86863532BBCBA9B000C40F0 /* Products */ = {
+		C86863532BBCBA9B000C40F0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				C86863592BBCBB2A000C40F0 /* Presenter */,
 				C86863582BBCBB17000C40F0 /* UseCase */,
-				C86863562BBCBADF000C40F0 /* ProductsRepository */,
-				C86863552BBCBAD7000C40F0 /* ViewModel */,
-				C86863542BBCBACC000C40F0 /* Model */,
 			);
-			path = Products;
-			sourceTree = "<group>";
-		};
-		C86863542BBCBACC000C40F0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C83ED83F2BBCDA14008A5A33 /* Services */,
-				C868635D2BBCBC05000C40F0 /* DataModels */,
-			);
-			path = Model;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		C86863552BBCBAD7000C40F0 /* ViewModel */ = {
@@ -220,6 +215,7 @@
 		C86863592BBCBB2A000C40F0 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				C8D65AC62BD87A8900356C10 /* Presenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -287,8 +283,10 @@
 		C86B197A2BB389FE009A906C /* SwiftayaTest */ = {
 			isa = PBXGroup;
 			children = (
-				C83ED82E2BBCD957008A5A33 /* SwiftayaTest.xcdatamodeld */,
-				C86863532BBCBA9B000C40F0 /* Products */,
+				C8D65ABE2BD875C800356C10 /* BaseClasses */,
+				C8D65AC52BD879BC00356C10 /* Data */,
+				C8D65AC32BD8793B00356C10 /* presentation */,
+				C86863532BBCBA9B000C40F0 /* Domain */,
 				C86B19AE2BB38A58009A906C /* Login */,
 				C86B197B2BB389FE009A906C /* AppDelegate.swift */,
 				C86B197D2BB389FE009A906C /* SceneDelegate.swift */,
@@ -357,7 +355,6 @@
 		C86B19B22BB38AA8009A906C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C86B197F2BB389FE009A906C /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -384,6 +381,45 @@
 				C86B19B42BB38B20009A906C /* UserDto.swift */,
 			);
 			path = DataModels;
+			sourceTree = "<group>";
+		};
+		C8D65ABE2BD875C800356C10 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				C8D65ABF2BD875DC00356C10 /* BaseViewModel.swift */,
+				C8D65AC12BD8766800356C10 /* BaseViewController.swift */,
+				C8D65AC82BD87BD700356C10 /* BasePresenter.swift */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		C8D65AC32BD8793B00356C10 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C86863592BBCBB2A000C40F0 /* Presenter */,
+				C8D65AC42BD8796000356C10 /* View */,
+				C86863552BBCBAD7000C40F0 /* ViewModel */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		C8D65AC42BD8796000356C10 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C86B197F2BB389FE009A906C /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C8D65AC52BD879BC00356C10 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C83ED83F2BBCDA14008A5A33 /* Services */,
+				C868635D2BBCBC05000C40F0 /* DataModels */,
+				C86863562BBCBADF000C40F0 /* ProductsRepository */,
+				C83ED82E2BBCD957008A5A33 /* SwiftayaTest.xcdatamodeld */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,6 +585,7 @@
 				C86B19802BB389FE009A906C /* ViewController.swift in Sources */,
 				C83ED8452BBCDA14008A5A33 /* APIEndpoints.swift in Sources */,
 				C83ED8322BBCD957008A5A33 /* Prooduct.swift in Sources */,
+				C8D65AC22BD8766800356C10 /* BaseViewController.swift in Sources */,
 				C86B197C2BB389FE009A906C /* AppDelegate.swift in Sources */,
 				C86B19B72BB38B40009A906C /* Repository.swift in Sources */,
 				C86B19B52BB38B20009A906C /* UserDto.swift in Sources */,
@@ -557,11 +594,14 @@
 				C86B19B92BB38B82009A906C /* LoginUseCase.swift in Sources */,
 				C86B19BB2BB38BA5009A906C /* LoginViewModel.swift in Sources */,
 				C83ED8362BBCD9A5008A5A33 /* ProductLocalDataSource.swift in Sources */,
+				C8D65AC72BD87A8900356C10 /* Presenter.swift in Sources */,
 				C85ABB822BD062A700370950 /* UpdateProductUseCase.swift in Sources */,
+				C8D65AC02BD875DC00356C10 /* BaseViewModel.swift in Sources */,
 				C80EA1C22BCD33E60080454A /* AddNewProductUseCase.swift in Sources */,
 				C83ED8312BBCD957008A5A33 /* SwiftayaTest.xcdatamodeld in Sources */,
 				C86B19BF2BB38CA1009A906C /* LoginRequest.swift in Sources */,
 				C83ED8442BBCDA14008A5A33 /* CoreDataStorageManagerProtocol.swift in Sources */,
+				C8D65AC92BD87BD700356C10 /* BasePresenter.swift in Sources */,
 				C80EA1C42BCD34690080454A /* SaveProductUseCase.swift in Sources */,
 				C83ED83E2BBCD9E2008A5A33 /* ProductVM.swift in Sources */,
 				C85ABB842BD062F300370950 /* DeleteProductUseCase.swift in Sources */,

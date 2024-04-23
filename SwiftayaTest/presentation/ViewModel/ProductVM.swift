@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class ProductVM {
+class ProductVM: BaseViewModel<Product> {
     @Published var productResponseRemote: ProductAPIResponse?
     @Published var productResponseLocal: [ProductEntity]?
     @Published var product: Product?
@@ -86,7 +86,4 @@ class ProductVM {
                 print("Error encoding products to JSON: \(error)")
             }
         }
-        
-        var cancellables = Set<AnyCancellable>()
-    
 }
