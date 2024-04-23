@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Swiftaya
 
 class ProductRepository : ProductRepositoryProtocol{
 
@@ -27,9 +28,9 @@ class ProductRepository : ProductRepositoryProtocol{
     
     // MARK: - Remote
     
-    func fetchProductsRemotely() -> AnyPublisher<ProductAPIResponse, Error> {
-        productRemoteDataSource.fetchData()
-    }
+
+    func fetchProductsRemotely<T: Decodable>(withEndpoint endpoint: BaseAPIRequest<T>) -> AnyPublisher<T,Error>{productRemoteDataSource.fetchData(withEndpoint:endpoint)
+        }
     
     func fetchProductRemotely(withId id: Int) -> AnyPublisher<Product, Error> {
         productRemoteDataSource.getProduct(withId: id)
@@ -61,7 +62,7 @@ class ProductRepository : ProductRepositoryProtocol{
 
 protocol ProductRepositoryProtocol {
     // Remote
-    func fetchProductsRemotely() -> AnyPublisher<ProductAPIResponse, Error>
+    func fetchProductsRemotely<T: Decodable>(withEndpoint endpoint: BaseAPIRequest<T>) -> AnyPublisher<T,Error>
     func fetchProductRemotely(withId id: Int) -> AnyPublisher<Product, Error>
     func addNewProductRemotely(title: String) -> AnyPublisher<Product, Error>
     func updateProductRemotely(withId id: Int, title: String) -> AnyPublisher<Product, Error>

@@ -8,13 +8,18 @@
 import Foundation
 import Combine
 import Swiftaya
+
+
+
 class ProductRemoteDataSource : ProductRemoteDataSourceProtocol{
     private let apiRequestProvider: APIRequestProviderProtocol = APIRequestProvider()
     
-    func fetchData() -> AnyPublisher<ProductAPIResponse, Error> {
+   /* func fetchData() -> AnyPublisher<ProductAPIResponse, Error> {
         let request = APIEndpoints.getProducts()
         return apiRequestProvider.request(request: request)
-    }
+    }*/
+
+    func fetchData<T: Decodable>(withEndpoint endpoint: BaseAPIRequest<T>) -> AnyPublisher<T,Error>{apiRequestProvider.request(request: endpoint)}
     
     func getProduct(withId id: Int) -> AnyPublisher<Product, Error> {
         let request = APIEndpoints.getProduct(withId: id)
@@ -40,7 +45,7 @@ class ProductRemoteDataSource : ProductRemoteDataSourceProtocol{
 
 
 protocol ProductRemoteDataSourceProtocol {
-    func fetchData() -> AnyPublisher<ProductAPIResponse, Error>
+    func fetchData<T: Decodable>(withEndpoint endpoint: BaseAPIRequest<T>) -> AnyPublisher<T,Error>
     func getProduct(withId id: Int) -> AnyPublisher<Product, Error>
     func addNewProduct(title: String) -> AnyPublisher<Product, Error>
     func updateProduct(withId id: Int, title: String) -> AnyPublisher<Product, Error>

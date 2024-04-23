@@ -12,11 +12,55 @@ class ViewController: UIViewController {
     private var viewModel = LoginViewModel()
     private var cancellables = Set<AnyCancellable>()
 
-    private var productVM = ProductVM()
-
+    var productVM = ProductVM()
+    let pm = ProductVM()
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        //////
+        //loginResponse()
+        fetchProducts()
+        //observeProductResponseLocalChanges()
+        bindData()
+    }
+    
+    private func bindData(){
+        productVM.$productResponseRemote
+            .sink { [weak self] productResponse in
+                if let product = productResponse?.products {
+                            print(
+                                product
+                            )
+                        } else {
+                            print(
+                                "Product response is nil or empty"
+                            )
+                        }                    }
+                    .store(
+                        in: &cancellables
+                    )
+    }
+    
+    /*private func fetchProducts() {
+        productVM.fetchProductsRemote { [weak self] error in
+            if let error = error {
+                print("Error fetching products: \(error)")
+            } else {
+                if let products = self?.productVM.productResponseRemote {
+                    self?.productVM.saveProductsToCoreData(products: products)
+                    
+                    self?.productVM.fetchProductsLocal { error in
+                        if let error = error {
+                            print("Error fetching products: \(error)")
+                        }
+                    }
+                }
+            }
+        }
+    }*/
+    
+    private func loginResponse(){
         viewModel.login(username: "kminchelle", password: "0lelplR")
         
         viewModel.$user
@@ -35,27 +79,11 @@ class ViewController: UIViewController {
                 }
             }
             .store(in: &cancellables)
-        //////
-        fetchProducts()
-        observeProductResponseLocalChanges()
     }
     
     private func fetchProducts() {
-        productVM.fetchProductsRemote { [weak self] error in
-            if let error = error {
-                print("Error fetching products: \(error)")
-            } else {
-                if let products = self?.productVM.productResponseRemote {
-                    self?.productVM.saveProductsToCoreData(products: products)
-                    
-                    self?.productVM.fetchProductsLocal { error in
-                        if let error = error {
-                            print("Error fetching products: \(error)")
-                        }
-                    }
-                }
-            }
-        }
+        productVM.fetchProductsRemote()
+        
     }
     
     private func observeProductResponseLocalChanges() {
